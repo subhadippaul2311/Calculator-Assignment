@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import "./Calculator.css"
+import React, { useState } from 'react';
+import './Calculator.css';
 
 const Calculator = () => {
-  const [num1, setNum1] = useState("");
-  const [num2, setNum2] = useState("");
-  const [result, setResult] = useState("");
+  const [num1, setNum1] = useState('');
+  const [num2, setNum2] = useState('');
+  const [result, setResult] = useState('');
 
   const handleNum1Change = (e) => {
     setNum1(e.target.value);
@@ -20,24 +20,24 @@ const Calculator = () => {
   };
 
   const handleSubtraction = () => {
-    const difference = (num1) - (num2);
+    const difference = num1 - num2;
     setResult(difference);
   };
 
   const handleMultiplication = () => {
-    const product = (num1) * (num2);
+    const product = num1 * num2;
     setResult(product);
   };
 
   const handleDivision = () => {
-    const quotient = (num1) / (num2);
+    const quotient = num1 / num2;
     setResult(quotient);
   };
 
   const handleDelete = () => {
-    setNum1("");
-    setNum2("");
-    setResult("");
+    setNum1('');
+    setNum2('');
+    setResult('');
   };
 
   return (
@@ -46,15 +46,17 @@ const Calculator = () => {
       <input type="number" value={num1} onChange={handleNum1Change} />
       <input type="number" value={num2} onChange={handleNum2Change} />
       <br />
-    
+
       <button onClick={handleAddition}>Addition</button>
       <button onClick={handleSubtraction}>Subtraction</button>
       <button onClick={handleMultiplication}>Multiplication</button>
       <button onClick={handleDivision}>Division</button>
-      
+
       <br />
       <h1>Result: {result}</h1>
-      <button onClick={handleDelete} className="dlt-button">Delete</button>
+      <button onClick={handleDelete} className="dlt-button">
+        Delete
+      </button>
     </div>
   );
 };
